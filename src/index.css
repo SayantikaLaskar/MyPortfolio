@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@import "tailwindcss";
+
+:root {
+  /* Custom Color Palette */
+  --primary-bg: #FFF5F2;     /* 40% - Main background */
+  --secondary-accent: #F5BABB; /* 30% - Secondary/accents */
+  --tertiary-highlight: #568F87; /* 20% - Tertiary/highlights */
+  --dark-text: #064232;      /* 10% - Dark text/emphasis */
+  
+  /* Legacy variables for compatibility */
+  --light-bg: #FFF5F2;
+  --light-surface: #F5BABB;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #FFF5F2;
+  color: #064232;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #FFF5F2;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #F5BABB;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #568F87;
+}
+/* Font classes for better typography */
+.font-display {
+  font-family: 'Playfair Display', serif;
+}
+
+.font-body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Ensure fonts are loaded */
+@font-face {
+  font-family: 'Poppins';
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-display: swap;
+}
+
+/* Custom theme utilities */
+.bg-primary {
+  background-color: #FFF5F2;
+}
+
+.bg-secondary {
+  background-color: #F5BABB;
+}
+
+.bg-tertiary {
+  background-color: #568F87;
+}
+
+.text-primary {
+  color: #064232;
+}
+
+.text-secondary {
+  color: #568F87;
+}
+
+.border-tertiary {
+  border-color: #568F87;
+}
+
+/* Smooth transitions */
+* {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+/* Better focus states */
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid #568F87;
+  outline-offset: 2px;
+}
