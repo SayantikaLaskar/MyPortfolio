@@ -9,7 +9,7 @@ import { InteractiveCard, SkillTag as InteractiveSkillTag } from '../animations/
 import { FloatingParticles } from '../animations/FloatingParticles';
 
 export function AboutSection() {
-  const { description, photoUrl, skills, contact, highlights } = aboutData;
+  const { description, skills, contact, highlights } = aboutData;
 
   // Enhanced scroll animations
   const titleAnimation = useSectionAnimation<HTMLHeadingElement>('bounce');
@@ -40,89 +40,40 @@ export function AboutSection() {
           About Me
         </motion.h2>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
-          {/* Left Column - Photo and Highlights */}
-          <div className="space-y-8">
-            {/* Profile Image Container with Interactive Effects */}
-            <InteractiveCard
-              className="mx-auto lg:mx-0 w-64 h-64"
-              glowEffect={true}
-              tiltEffect={true}
-              scaleEffect={true}
+        <div className="max-w-4xl mx-auto">
+          {/* Highlights Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2, duration: 0.5 }}
+            className="space-y-3 mb-12"
+          >
+            <h3
+              className="text-xl font-semibold mb-4"
+              style={{ color: colorPalette.text.primary }}
             >
+              Key Highlights
+            </h3>
+            {highlights.map((highlight, index) => (
               <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+                key={index}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: 0.2, duration: 0.5 }}
-                className="relative w-full h-full rounded-2xl overflow-hidden shadow-xl bg-gray-200"
+                transition={{ delay: 0.3 + index * 0.1, duration: 0.3 }}
+                className="flex items-center gap-3"
               >
-              <img
-                src={photoUrl}
-                alt="Sayantika Laskar"
-                className="w-full h-full object-cover"
-                onLoad={() => console.log('Image loaded successfully')}
-                onError={(e) => {
-                  console.log('Image failed to load:', photoUrl);
-                  // Fallback to a gradient placeholder
-                  const target = e.target as HTMLImageElement;
-                  target.style.display = 'none';
-                  // Show the fallback div
-                  const fallbackDiv = target.nextElementSibling as HTMLElement;
-                  if (fallbackDiv) {
-                    fallbackDiv.style.display = 'flex';
-                  }
-                }}
-                loading="lazy"
-              />
-              {/* Gradient overlay for placeholder - hidden by default */}
-              <div
-                className="absolute inset-0 flex items-center justify-center font-semibold text-lg"
-                style={{
-                  background: `linear-gradient(135deg, ${colorPalette.accent} 0%, ${colorPalette.dark} 100%)`,
-                  color: colorPalette.text.inverse,
-                  display: 'none' // Hidden by default, only shown on image error
-                }}
-              >
-                <span className="opacity-90">Sayantika Laskar</span>
-              </div>
+                <div
+                  className="w-2 h-2 rounded-full flex-shrink-0"
+                  style={{ backgroundColor: colorPalette.accent }}
+                />
+                <span style={{ color: colorPalette.text.secondary }}>{highlight}</span>
               </motion.div>
-            </InteractiveCard>
+            ))}
+          </motion.div>
 
-            {/* Highlights */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.4, duration: 0.5 }}
-              className="space-y-3"
-            >
-              <h3
-                className="text-xl font-semibold mb-4"
-                style={{ color: colorPalette.text.primary }}
-              >
-                Key Highlights
-              </h3>
-              {highlights.map((highlight, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.5 + index * 0.1, duration: 0.3 }}
-                  className="flex items-center gap-3"
-                >
-                  <div
-                    className="w-2 h-2 rounded-full flex-shrink-0"
-                    style={{ backgroundColor: colorPalette.accent }}
-                  />
-                  <span style={{ color: colorPalette.text.secondary }}>{highlight}</span>
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
-
-          {/* Right Column - Description and Skills */}
+          {/* Description and Skills Section */}
           <div className="space-y-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
