@@ -193,7 +193,7 @@ function PublicationCard({ publication, index }: PublicationCardProps) {
           </div>
           {publication.doi && (
             <p className="text-xs text-[#064232] font-mono bg-[#F5BABB] px-2 py-1 rounded mb-3">
-              DOI: {publication.doi}
+              {publication.doi}
             </p>
           )}
         </div>

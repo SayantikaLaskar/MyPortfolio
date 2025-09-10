@@ -22,9 +22,9 @@ export const aboutData = {
 
     // Programming Languages
     { name: 'Python', category: 'programming', proficiency: 'expert' },
-    { name: 'R', category: 'programming', proficiency: 'advanced' },
-    { name: 'JavaScript', category: 'programming', proficiency: 'intermediate' },
+    { name: 'Java', category: 'programming', proficiency: 'expert' },
     { name: 'SQL', category: 'programming', proficiency: 'advanced' },
+    { name: 'C++', category: 'programming', proficiency: 'advanced' },
 
     // Frameworks & Libraries
     { name: 'TensorFlow', category: 'frameworks', proficiency: 'expert' },

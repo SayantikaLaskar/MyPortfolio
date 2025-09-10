@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Mail, Linkedin, Github, ExternalLink } from 'lucide-react';
+import { FaKaggle } from 'react-icons/fa';
 import type { ContactInfo } from '../../types';
 import { colorPalette } from '../../utils/colors';
 
@@ -11,7 +12,7 @@ const socialIcons = {
   email: Mail,
   linkedin: Linkedin,
   github: Github,
-  twitter: ExternalLink, // Using ExternalLink for Kaggle
+  twitter: FaKaggle, // Using proper Kaggle icon from react-icons
   website: ExternalLink,
 };
 
