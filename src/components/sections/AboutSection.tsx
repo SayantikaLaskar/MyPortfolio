@@ -5,7 +5,7 @@ import { ContactLinks } from '../ui/ContactLinks';
 import { aboutData } from '../../data/about';
 import { colorPalette } from '../../utils/colors';
 import { useSectionAnimation, useStaggeredAnimation } from '../../hooks/useScrollAnimation';
-import { InteractiveCard, SkillTag as InteractiveSkillTag } from '../animations/InteractiveHoverEffects';
+import { SkillTag as InteractiveSkillTag } from '../animations/InteractiveHoverEffects';
 import { FloatingParticles } from '../animations/FloatingParticles';
 
 export function AboutSection() {
