@@ -11,7 +11,7 @@ export const aboutData = {
     I focus on creating robust, production-ready systems that bridge the gap between research and 
     practical applications.`,
 
-  photoUrl: '/images/profile.jpeg', // Your actual profile image
+  photoUrl: './images/profile.jpeg', // Your actual profile image
 
   skills: [
     // ML/DL Core
