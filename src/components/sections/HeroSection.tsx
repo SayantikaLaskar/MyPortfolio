@@ -144,7 +144,22 @@ export function HeroSection() {
               color: '#064232',
               borderColor: '#568F87'
             }}
-            onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
+            onClick={() => {
+              const aboutElement = document.getElementById('about');
+              if (aboutElement) {
+                const contactElement = aboutElement.querySelector('.flex.flex-wrap.justify-center.gap-4.mt-8');
+                if (contactElement) {
+                  const elementTop = contactElement.getBoundingClientRect().top + window.pageYOffset;
+                  const offsetPosition = elementTop - 80; // 80px offset for navbar
+                  window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                  });
+                } else {
+                  aboutElement.scrollIntoView({ behavior: 'smooth' });
+                }
+              }
+            }}
           >
             Learn More
           </motion.button>

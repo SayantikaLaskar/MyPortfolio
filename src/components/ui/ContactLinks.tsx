@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Mail, Linkedin, Github, Twitter, ExternalLink } from 'lucide-react';
+import { Mail, Linkedin, Github, ExternalLink } from 'lucide-react';
 import type { ContactInfo } from '../../types';
 import { colorPalette } from '../../utils/colors';
 
@@ -11,7 +11,7 @@ const socialIcons = {
   email: Mail,
   linkedin: Linkedin,
   github: Github,
-  twitter: Twitter,
+  twitter: ExternalLink, // Using ExternalLink for Kaggle
   website: ExternalLink,
 };
 
@@ -20,7 +20,7 @@ export function ContactLinks({ contact }: ContactLinksProps) {
     { key: 'email', url: `mailto:${contact.email}`, label: 'Email' },
     { key: 'linkedin', url: contact.linkedin, label: 'LinkedIn' },
     { key: 'github', url: contact.github, label: 'GitHub' },
-    { key: 'twitter', url: contact.twitter, label: 'Twitter' },
+    { key: 'twitter', url: contact.twitter, label: 'Kaggle' },
     { key: 'website', url: contact.website, label: 'Website' },
   ].filter(link => link.url);
 

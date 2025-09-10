@@ -73,6 +73,7 @@ export function AboutSection() {
                     fallbackDiv.style.display = 'flex';
                   }
                 }}
+                loading="lazy"
               />
               {/* Gradient overlay for placeholder - hidden by default */}
               <div

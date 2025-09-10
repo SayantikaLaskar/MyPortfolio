@@ -44,10 +44,10 @@ export const aboutData = {
   ] as Skill[],
 
   contact: {
-    email: 'sayantika.laskar@example.com',
+    email: 'sayantikalaskar2002@gmail.com',
     linkedin: 'https://linkedin.com/in/sayantika-laskar',
-    github: 'https://github.com/sayantika-laskar',
-    twitter: 'https://twitter.com/sayantika_ml',
+    github: 'https://github.com/sayantikalaskar',
+    twitter: 'https://www.kaggle.com/sayantikalaskar1712',
   } as ContactInfo,
 
   highlights: [

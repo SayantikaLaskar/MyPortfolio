@@ -39,7 +39,7 @@ function ExperienceCard({ experience, index }: ExperienceCardProps) {
       className="relative flex items-center min-h-[200px]"
     >
       {/* Timeline dot */}
-      <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-[#568F87] rounded-full border-4 border-[#FFF5F2] z-20" />
+      <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-[#568F87] rounded-full border-4 border-[#FFF5F2] z-20 hidden md:block" />
 
       {/* Card positioned on alternating sides */}
       <div className={`w-full flex ${index % 2 === 0 ? 'justify-start pr-4 md:pr-8' : 'justify-end pl-4 md:pl-8'}`}>
@@ -195,7 +195,22 @@ export function ExperienceSection() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="px-8 py-3 bg-[#568F87] text-white font-semibold rounded-full border-2 border-[#064232] transition-all duration-300 hover:bg-[#064232]"
-            onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
+            onClick={() => {
+              const aboutElement = document.getElementById('about');
+              if (aboutElement) {
+                const contactElement = aboutElement.querySelector('.flex.flex-wrap.justify-center.gap-4.mt-8');
+                if (contactElement) {
+                  const elementTop = contactElement.getBoundingClientRect().top + window.pageYOffset;
+                  const offsetPosition = elementTop - 80; // 80px offset for navbar
+                  window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                  });
+                } else {
+                  aboutElement.scrollIntoView({ behavior: 'smooth' });
+                }
+              }
+            }}
           >
             Get In Touch
           </motion.button>
